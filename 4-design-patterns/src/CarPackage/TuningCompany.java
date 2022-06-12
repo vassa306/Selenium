@@ -1,4 +1,5 @@
 package CarPackage;
 
-public class TuningCompany {
+public interface TuningCompany {
+      String TuneCar();
 }
