@@ -30,9 +30,9 @@ import static CarPackage.CarList.getCarList;
         }
 
 
-        public List<Car> assembleCar() {
-            List<Car> carList = getCarList(new ArrayList<>());
-            return carList;
+        public List<CarI>assembleCar() {
+            List<CarI> assemble = getCarList(new ArrayList<>());
+            return assemble;
 
         }
     }

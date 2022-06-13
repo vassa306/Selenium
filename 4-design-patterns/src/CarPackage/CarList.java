@@ -8,7 +8,9 @@ public class CarList {
 
         static Car.Builder cars = new Car.Builder();
 
-        public static List<Car> getCarList(List<Car> carList){
+        public static List<CarI> getCarList(List<CarI> carList){
+
+
             Car boxer =  new Car.Builder().brand(Car.Brand.PORSCHE).color(Car.Color.BLACK).types(Car.Types.BOXER).year("1997").build();
             Car mustang = new Car.Builder().brand(Car.Brand.FORD).color(Car.Color.BLACK).types(Car.Types.MUSTANG).year("1967").build();
             Car carreragt = new Car.Builder().brand(Car.Brand.PORSCHE).color(Car.Color.WHITE).types(Car.Types.CARERRAGT).year("2002").build();
@@ -38,11 +40,8 @@ public class CarList {
             return carList;
         }
 
-
-
-
         public static void main(String[] args) {
-            List<Car>carList = new ArrayList<>();
+            List<CarI>carList = new ArrayList<>();
             getCarList(carList);
 
 

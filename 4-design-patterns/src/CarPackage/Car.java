@@ -1,37 +1,47 @@
 package CarPackage;
 
-public class Car {
+public class Car implements CarI {
 
     Brand brand;
     Color color;
     Types types;
     private String year;
 
-
-
-
     public Car(Builder builder){
         this.brand = builder.brand;
         this.types = builder.types;
         this.color = builder.color;
         this.year = builder.year;
-
     }
 
+    @Override
     public Brand getBrand() {
         return brand;
     }
 
+    @Override
     public String getYear() {
         return year;
     }
 
+    @Override
     public Types getTypes() {
         return types;
     }
 
+    @Override
     public Color getColor() {
         return color;
+    }
+
+    @Override
+    public String toString() {
+        return "Car: " +
+                "  BRAND=" + brand +
+                ", COLOR=" + color +
+                ", TYPES=" + types +
+                ", YEAR=" + year +
+                ", PACKAGE= ";
     }
 
     public enum Types {
@@ -44,7 +54,7 @@ public class Car {
     }
 
     public enum Brand{
-        BMW, AUDI,FERRARI,FORD,PORSCHE,LAMBORGHINI,TESLA;
+        FERRARI,FORD,PORSCHE;
     }
 
     static class Builder{
@@ -81,10 +91,6 @@ public class Car {
             this.year = year;
             return this;
         }
-
-
-
     }
-
 
 }
