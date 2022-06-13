@@ -3,9 +3,11 @@ package CarPackage;
 public class SportDecorator extends CarDecorator {
 
     private static final Car car = null;
+    private final TuningCompany tuningCompany;
 
     public SportDecorator(TuningCompany tuningCompany) {
         super(tuningCompany, car);
+        this.tuningCompany = tuningCompany;
     }
 
 
@@ -30,7 +32,7 @@ public class SportDecorator extends CarDecorator {
     }
 
     public String toString() {
-        return applySportPackage() + super.toString();
+        return applySportPackage() + super.tuningCompany.decorate();
     }
 
 

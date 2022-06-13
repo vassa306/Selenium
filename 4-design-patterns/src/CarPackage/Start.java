@@ -3,6 +3,7 @@ package CarPackage;
 import java.util.ArrayList;
 import java.util.List;
 
+import static CarPackage.Car.Brand.FERRARI;
 import static CarPackage.WarningMassage.WarningMessages.EMPTYLINE;
 import static CarPackage.WarningMassage.WarningMessages.EMPTYWAREHOUSE;
 
@@ -30,10 +31,12 @@ public class Start {
             }
         }
 
-
-
         System.out.println("-------------------------------Warehouse--------------------------------------------------------------------------");
         storeList = Warehouse.getInstance().storeCars();
+        List<String> sportList = new ArrayList<>();
+        TuningCompany sport = new SportDecorator(new TuningImpl());
+        TuningCompany offroad = new OffroadDecorator(new TuningImpl());
+        TuningCompany rallye = new RallyeDecorator(new TuningImpl());
 
         System.out.println("There are " + storeList.size() + " cars at warehouse");
         if (storeList.isEmpty()) {
@@ -44,26 +47,26 @@ public class Start {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append(num).append(". ").append(storeList.get(j).toString().toUpperCase());
                 System.out.println(stringBuilder.toString());
+                if (storeList.get(j).equals(FERRARI)){
+
+                }
 
             }
         }
         System.out.println();
         System.out.println("Entering Tuning Company with stored cars");
-        TuningCompany sport = new SportDecorator(new TuningImpl());
-        TuningCompany offroad = new OffroadDecorator(new TuningImpl());
-        System.out.println("possible packages: "  + "\n" + " *" + sport.decorate() + "\n"+ " *" +offroad.decorate());
-        System.out.println();
 
-        String sp = sport.toString().substring(0, 5).toUpperCase();
-        String off = offroad.toString().substring(0, 7).toUpperCase();
-        System.out.println(storeList.get(0)+sp);
-        System.out.println(storeList.get(2)+ off);
-        System.out.println(storeList.get(3)+ sp);
-        System.out.println(storeList.get(4)+ sp);
+        System.out.println("possible packages: "  + "\n" + " * " + sport.decorate() + "\n"+ " * " +offroad.decorate());
+        System.out.println();
+        sportList.add(storeList.get(0)+sport.toString());
+        System.out.println(sportList.get(0));
+
 
 
     }
+    
 }
+
 
 
 

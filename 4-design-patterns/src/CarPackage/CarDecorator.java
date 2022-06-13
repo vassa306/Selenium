@@ -38,8 +38,5 @@ public class CarDecorator implements CarI,TuningCompany {
     public String decorate() {
         return tuningCompany.decorate();
     }
-
-
-
 }
 

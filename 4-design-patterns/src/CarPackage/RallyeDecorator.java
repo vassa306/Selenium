@@ -1,14 +1,12 @@
 package CarPackage;
 
-public class OffroadDecorator extends CarDecorator {
-
-
+public class RallyeDecorator extends CarDecorator{
     private static final Car car = null;
 
-    //new constructor
-    public OffroadDecorator(TuningCompany tuningCompany) {
+    public RallyeDecorator(TuningCompany tuningCompany) {
         super(tuningCompany, car);
     }
+
     @Override
     public Car.Brand getBrand() {
         return null;
@@ -31,15 +29,16 @@ public class OffroadDecorator extends CarDecorator {
 
     @Override
     public String toString() {
-        return applyOffroadPackage()+super.tuningCompany.decorate();
+        return applyRallyePackage()+super.tuningCompany.decorate();
     }
 
     @Override
     public String decorate() {
-       return applyOffroadPackage();
+        return applyRallyePackage();
     }
 
-    public String applyOffroadPackage(){
-        return "OFFROAD";
+    public String applyRallyePackage(){
+        return "RALLYE";
     }
 }
+
