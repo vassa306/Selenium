@@ -1,11 +1,12 @@
-package CarFactory;
+package CarPackage;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
+
     private volatile static Warehouse uniqueWarehouseInstance;
-    List<Car> storeList = new ArrayList<>();
+    List<CarI> storeList = new ArrayList<>();
 
 
     protected Warehouse() {
@@ -27,13 +28,10 @@ public class Warehouse {
 
 
 
-    public List<Car> storeCars() {
+    public List<CarI> storeCars() {
         storeList = Factory.getInstance().assembleCar();
         return storeList;
     }
-
-
-
-    public void removeCar() {
-    }
 }
+
+
