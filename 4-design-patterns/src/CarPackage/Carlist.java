@@ -20,17 +20,17 @@ public class Carlist {
         Car VEYRON = new CarBuilder().setBrand(Car.Brand.BUGATTI).setTypes(Car.Types.VEYRON).setSpz("0909008").setColor(Car.Color.white).createCar();
         Car GT = new CarBuilder().setBrand(Car.Brand.FORD).setTypes(Car.Types.FIESTA).setSpz("0989890").setColor(Car.Color.black).createCar();
 
-//        carList.add(AudiS3);
-//        carList.add(BMWE36);
-//        carList.add(Porsche911);
-//        carList.add(MONDEO);
-//        carList.add(MUSTANG);
-//        carList.add(F40);
-//        carList.add(F4ORED);
-//        carList.add(MERG);
-//        carList.add(MerG63);
-//        carList.add(VEYRON);
-//        carList.add(GT);
+        carList.add(AudiS3);
+        carList.add(BMWE36);
+        carList.add(Porsche911);
+        carList.add(MONDEO);
+        carList.add(MUSTANG);
+        carList.add(F40);
+        carList.add(F4ORED);
+        carList.add(MERG);
+        carList.add(MerG63);
+        carList.add(VEYRON);
+        carList.add(GT);
         return carList;
     }
 }
