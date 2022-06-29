@@ -1,6 +1,6 @@
 package CarPackage;
 
-public interface TuningCompany {
+public interface ITuningCompany {
 
     String decorate();
 

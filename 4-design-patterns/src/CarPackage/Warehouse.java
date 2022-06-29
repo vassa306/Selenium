@@ -1,16 +1,14 @@
 package CarPackage;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Warehouse {
-
     private volatile static Warehouse uniqueWarehouseInstance;
-    List<CarI> storeList = new ArrayList<>();
-
+    List<Car> storeList = new ArrayList<>();
 
     protected Warehouse() {
-
     }
 
     public static Warehouse getInstance() {
@@ -25,13 +23,19 @@ public class Warehouse {
         return uniqueWarehouseInstance;
     }
 
-
-
-
-    public List<CarI> storeCars() {
-        storeList = Factory.getInstance().assembleCar();
+    public List<Car> storeCars() {
+        storeList = CarManufacture.getInstance().assembleCarlist();
+        if (storeList.isEmpty()) {
+            System.out.println(WarningMessages.EMPTYLINE);
+        }
+        for (int i = 0; i < storeList.size(); i++) {
+            storeList.sort(Comparator.comparing(Car::toString));
+        }
         return storeList;
     }
+
+    public static void main(String[] args) {
+        Warehouse war = new Warehouse();
+        war.storeCars();
+    }
 }
-
-

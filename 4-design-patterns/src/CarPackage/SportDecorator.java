@@ -2,49 +2,32 @@ package CarPackage;
 
 public class SportDecorator extends CarDecorator {
 
-    private static final Car car = null;
-    private final TuningCompany tuningCompany;
+    public static Car car = null;
 
-    public SportDecorator(TuningCompany tuningCompany) {
-        super(tuningCompany, car);
-        this.tuningCompany = tuningCompany;
+    public SportDecorator() {
+        super(car);
     }
 
-
-    @Override
-    public Car.Brand getBrand() {
-        return null;
+    public static Car getCar(Car car) {
+        return SportDecorator.car;
     }
 
-    @Override
-    public String getYear() {
-        return null;
+    public void setCar(Car car) {
+        SportDecorator.car = car;
     }
 
     @Override
-    public Car.Types getTypes() {
-        return null;
-    }
-
-    @Override
-    public Car.Color getColor() {
-        return null;
-    }
-
     public String toString() {
-        return applySportPackage() + super.tuningCompany.decorate();
+        return  super.decorate() + applySportPackage();
     }
-
 
     @Override
     public String decorate() {
-       return applySportPackage();
-
+        return "";
     }
 
-    private String applySportPackage(){
-        return "SPORT";
+    public String applySportPackage(){
+        return " Sport";
     }
+
 }
-
-

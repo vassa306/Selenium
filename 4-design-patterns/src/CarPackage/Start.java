@@ -1,72 +1,131 @@
 package CarPackage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-import static CarPackage.Car.Brand.FERRARI;
-import static CarPackage.WarningMassage.WarningMessages.EMPTYLINE;
-import static CarPackage.WarningMassage.WarningMessages.EMPTYWAREHOUSE;
 
 public class Start {
 
 
-    public static void main(String... args) {
+    public static void main(String[] args) {
+        Warehouse warehouse = new Warehouse();
 
-        List<CarI> storeList = new ArrayList<>();
-        List<CarI> carList = new ArrayList<>();
+
+        List<Car> storeList;
+        int counter = 0;
         int num = 0;
-        TuningCompany tuningCompany = null;
+        int numsport = 0;
+        int countferrari = 0;
+        int numoffroad = 0;
+
+        StringBuilder stringBuilder;
+
+        storeList = warehouse.getInstance().storeCars();
+        stringBuilder = new StringBuilder();
+
+        System.out.println();
+        for (int a = 0; a < storeList.size(); a++) {
 
 
-        System.out.println("-------------------------------Factory----------------------------------------------------------------------------");
-        carList = Factory.getInstance().assembleCar();
-        //iterate through list and get assemble cars
-        if (carList.isEmpty()) {
-            System.out.println(EMPTYLINE);
-        } else {
-            System.out.println("Currently assembled cars: ");
-
-            for (int i = 0; i < carList.size(); i++) {
-                System.out.println(carList.get(i).toString().toUpperCase());
-            }
+            counter++;
+            stringBuilder.append(counter).append("Car is:").append(storeList.get(a)).toString();
         }
 
-        System.out.println("-------------------------------Warehouse--------------------------------------------------------------------------");
-        storeList = Warehouse.getInstance().storeCars();
-        List<String> sportList = new ArrayList<>();
-        TuningCompany sport = new SportDecorator(new TuningImpl());
-        TuningCompany offroad = new OffroadDecorator(new TuningImpl());
-        TuningCompany rallye = new RallyeDecorator(new TuningImpl());
+        List<String> sportlist = new ArrayList<>();
+        List<String> FerrariList = new ArrayList<>();
+        List<String> OffroadList = new ArrayList<>();
 
-        System.out.println("There are " + storeList.size() + " cars at warehouse");
+        SportDecorator sport = new SportDecorator();
+        RallyeDecorator rallye = new RallyeDecorator();
+        System.out.println("Tuning Company allows to apply these packages: ");
+        System.out.println("-" + sport.applySportPackage() + "\n" + "-" + rallye.applyOffroadPackage());
+        System.out.println();
         if (storeList.isEmpty()) {
-            System.out.println(EMPTYWAREHOUSE);
+            System.out.println(WarningMessages.EMPTYWAREHOUSE);
         } else {
             for (int j = 0; j < storeList.size(); j++) {
                 num++;
-                StringBuilder stringBuilder = new StringBuilder();
+
+                stringBuilder = new StringBuilder();
                 stringBuilder.append(num).append(". ").append(storeList.get(j).toString().toUpperCase());
                 System.out.println(stringBuilder.toString());
-                if (storeList.get(j).equals(FERRARI)){
 
+                if (storeList.get(j).brand == Car.Brand.BMW || storeList.get(j).brand == Car.Brand.PORSCHE || storeList.get(j).brand == Car.Brand.FERRARI || storeList.get(j).brand == Car.Brand.AUDI || storeList.get(j).brand == Car.Brand.BUGATTI) {
+                    sportlist.add(storeList.get(j) + sport.toString());
+                    Collections.sort(sportlist);
                 }
+                if (storeList.get(j).brand == Car.Brand.FERRARI) {
+                    FerrariList.add(storeList.get(j) + sport.toString());
 
+                } else if (storeList.get(j).types == Car.Types.G || storeList.get(j).types == Car.Types.G63) {
+                    OffroadList.add(storeList.get(j) + rallye.toString());
+                }
             }
         }
+        System.out.println("Print all Sport Cars:");
+        if (sportlist.isEmpty()) {
+            System.out.println(WarningMessages.SPORTEMPTY);
+        }
+        for (int i = 0; i < sportlist.size(); i++) {
+            numsport++;
+            stringBuilder = new StringBuilder();
+            stringBuilder.append(numsport).append(".").append(sportlist.get(i)).toString().toUpperCase();
+            System.out.println(stringBuilder.toString());
+
+        }
         System.out.println();
-        System.out.println("Entering Tuning Company with stored cars");
-
-        System.out.println("possible packages: "  + "\n" + " * " + sport.decorate() + "\n"+ " * " +offroad.decorate());
+        System.out.println("---------------------*Print all Ferrari models*-------------------------------");
+        if (FerrariList.isEmpty()) {
+            System.out.println(WarningMessages.NOFERRARIINWAREHOUSE);
+        }
+        for (int k = 0; k < FerrariList.size(); k++) {
+            stringBuilder = new StringBuilder();
+            stringBuilder.append(countferrari).append(".").append(FerrariList.get(k).toString().toUpperCase());
+            System.out.println(stringBuilder.toString());
+        }
         System.out.println();
-        sportList.add(storeList.get(0)+sport.toString());
-        System.out.println(sportList.get(0));
+        if (FerrariList.isEmpty()) {
+            System.out.println(WarningMessages.NOFERRARIINWAREHOUSE);
+        } else {
+            FerrariList.remove(1);
+            System.out.println("Car has been deleted");
+            for (int i = 0; i < FerrariList.size(); i++) {
+                countferrari++;
+                stringBuilder = new StringBuilder();
+                System.out.println("State After deleted model");
+                stringBuilder.append(countferrari).append(".").append(FerrariList.get(i)).toString();
+                System.out.println(stringBuilder.toString());
+            }
+        }
 
+        System.out.println("Print all Ferrari Cars: Sorted");
 
+        System.out.println();
+        for (int i = 0; i < FerrariList.size(); i++) {
+            countferrari++;
+            Collections.sort(FerrariList);
+            stringBuilder = new StringBuilder();
+            System.out.println("List of Ferrari after deleted record");
+            stringBuilder.append(countferrari).append(".").append(FerrariList.get(i)).toString().toUpperCase();
+            System.out.println(stringBuilder.toString());
+        }
+        System.out.println();
+        System.out.println("List of Offroad cars");
+        if (OffroadList.isEmpty()) {
+            System.out.println(WarningMessages.OFFROADEMPTY);
+        } else {
+            for (int l = 0; l < OffroadList.size(); l++) {
 
+                numoffroad++;
+                Collections.sort(OffroadList);
+                stringBuilder = new StringBuilder();
+                stringBuilder.append(numoffroad).append(".").append(OffroadList.get(l)).toString();
+                System.out.println(stringBuilder.toString());
+            }
+        }
     }
-    
 }
-
 
 
 

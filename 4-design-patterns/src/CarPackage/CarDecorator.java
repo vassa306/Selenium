@@ -1,42 +1,29 @@
 package CarPackage;
 
+public class CarDecorator implements ITuningCompany {
 
+    protected Car car;;
 
-
-public class CarDecorator implements CarI,TuningCompany {
-    protected TuningCompany tuningCompany;
-    private Car car;
-
-    public CarDecorator(TuningCompany tuningCompany, Car car){
+    public CarDecorator(Car car) {
         super();
         this.car = car;
-        this.tuningCompany = tuningCompany;
+    }
 
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     @Override
-    public Car.Brand getBrand() {
-        return null;
-    }
-
-    @Override
-    public String getYear() {
-        return null;
-    }
-
-    @Override
-    public Car.Types getTypes() {
-        return null;
-    }
-
-    @Override
-    public Car.Color getColor() {
-        return null;
+    public String toString() {
+        return super.toString();
     }
 
     @Override
     public String decorate() {
-        return tuningCompany.decorate();
+        return "configuration";
     }
 }
-

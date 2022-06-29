@@ -1,96 +1,81 @@
 package CarPackage;
 
-public class Car implements CarI {
+public abstract class Car  {
+
+    public abstract void tune();
+
+    public enum Color {
+        yellow, blue, red, green,black,white,blackmatte;
+    }
+
+    public String spz = null;
+
+    public enum Brand {
+        BMW, AUDI, MERCEDES, PORSCHE,FORD,FERRARI,BUGATTI;
+    }
+
+
+
+    public enum Types {
+        E36, E92, E30, E46, EClass2007, C220, S32004, A52015, A8, Q7, S52015,CAYMAN,CARRERA,CARRERAGT,P911,MUSTANG,
+        GT,FIESTA,F40,CALIFORNIA,FFX,MONDEO,G63, G,VEYRON;
+    }
 
     Brand brand;
     Color color;
     Types types;
-    private String year;
 
-    public Car(Builder builder){
-        this.brand = builder.brand;
-        this.types = builder.types;
-        this.color = builder.color;
-        this.year = builder.year;
+    public Car(Brand brand, Types types, String spz, Color color) {
+        this.brand = brand;
+        this.types = types;
+        this.spz = spz;
+        this.color = color;
+
     }
 
-    @Override
     public Brand getBrand() {
         return brand;
     }
 
-    @Override
-    public String getYear() {
-        return year;
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
-    @Override
+    public String getSpz() {
+        return spz;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setSpz(String spz) {
+        this.spz = spz;
+    }
+
     public Types getTypes() {
         return types;
     }
 
-    @Override
-    public Color getColor() {
-        return color;
+    public void setTypes(Types types) {
+        this.types = types;
     }
 
     @Override
     public String toString() {
         return "Car: " +
-                "  BRAND=" + brand +
-                ", COLOR=" + color +
-                ", TYPES=" + types +
-                ", YEAR=" + year +
-                ", PACKAGE= ";
+                " brand=" + brand +
+                " color=" + color +
+                " type=" + types +
+                " spz=" + spz +
+                " package="+
+                "\n"
+                ;
     }
-
-    public enum Types {
-        F40, F50, ENZO, BOXER, CARERRAGT, GT3RS, FOCUS, GT, FIESTARS, MONDEO,MUSTANG, P911, CAYMAN,CAYENNE,;
-    }
-
-
-    public enum Color {
-        BLACK, WHITE, RED, GREEN, YELLOW,PINK,BLUE;
-    }
-
-    public enum Brand{
-        FERRARI,FORD,PORSCHE;
-    }
-
-    static class Builder{
-        Brand brand;
-        Color color;
-        Types types;
-        private String year;
-
-
-        public Car build(){
-            return new Car(this);
-        }
-
-        public Builder(){
-
-        }
-
-        public Builder brand (Brand brand){
-            this.brand = brand;
-            return this;
-        }
-
-        public Builder types (Types types){
-            this.types = types;
-            return this;
-        }
-
-        public Builder color(Color color){
-            this.color = color;
-            return  this;
-        }
-
-        public Builder year(String year){
-            this.year = year;
-            return this;
-        }
-    }
-
 }
+
+
