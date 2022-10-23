@@ -1,2 +1,5 @@
-package rough;public class TestProperties {
+package rough;
+
+public class TestProperties {
+
 }
