@@ -3,6 +3,8 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.Properties;
+
 
 public class TestBase {
     /*
@@ -16,6 +18,8 @@ public class TestBase {
     */
 
     public static WebDriver driver;
+    public static Properties config = new Properties();
+    Properties OR = new Properties();
 
     @BeforeSuite
     public void setUp(){
