@@ -4,15 +4,10 @@ import base.TestBase;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
-
-import static org.bouncycastle.asn1.x500.style.RFC4519Style.name;
 
 public class TestUtils extends TestBase {
 
