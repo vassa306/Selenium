@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import utilities.ExcelReader;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.Properties;
+
 import java.util.concurrent.TimeUnit;
 
 
@@ -34,6 +36,8 @@ public class TestBase {
     public static FileInputStream fis;
     public static Properties config = new Properties();
     public static Properties OR = new Properties();
+    public static ExcelReader excel = new ExcelReader(
+            System.getProperty("user.dir") + "\\src\\test\\resources\\excel\\testdata.xlsx");
 
     @BeforeSuite
     public void setUp() throws IOException {

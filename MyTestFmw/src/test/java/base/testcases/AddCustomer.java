@@ -1,4 +1,4 @@
-package testcases;
+package base.testcases;
 
 public class AddCustomer {
 
