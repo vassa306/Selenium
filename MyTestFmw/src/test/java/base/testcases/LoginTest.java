@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
 
-    @Test(dataProvider = "getData")
+
     public void loginIntoEshop(){
         driver.findElement(By.xpath(OR.getProperty("bmlBtn"))).click();
         Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("bmlBtn"))),"Login not successful");
@@ -25,7 +25,7 @@ public class LoginTest extends TestBase {
         driver.findElement(By.xpath(OR.getProperty("continueBtn"))).click();
         Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("continueBtn"))),"cannot open Registration page");
         driver.findElement(By.xpath(OR.getProperty("firsNameField"))).sendKeys(firstName);
-        driver.findElement(By.xpath(OR.getProperty("lastNameField"))).sendKeys(lastName);
+        driver.findElement(By.xpath(OR.getProperty("lastNameFiel"))).sendKeys(lastName);
 
 
 
