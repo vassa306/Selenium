@@ -1,6 +1,7 @@
-package base.testcases;
+package testcases;
 
 import base.TestBase;
+import io.qameta.allure.Description;
 import org.apache.poi.hssf.record.TableRecord;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -20,12 +21,14 @@ public class LoginTest extends TestBase {
 
 
     @Test(dataProvider="getData")
+    @Description("Login Test of AutomationStore")
     public void registerIntoEshop(String firstName, String lastName, String Email, String telephone) throws InterruptedException {
         loginIntoEshop();
         driver.findElement(By.xpath(OR.getProperty("continueBtn"))).click();
         Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("continueBtn"))),"cannot open Registration page");
         driver.findElement(By.xpath(OR.getProperty("firsNameField"))).sendKeys(firstName);
         driver.findElement(By.xpath(OR.getProperty("lastNameFiel"))).sendKeys(lastName);
+
 
 
 

@@ -1,7 +1,7 @@
 base\TestBase.class
-base\testcases\LoginTest.class
 listeners\CustomListeners.class
 utilities\ExcelReader.class
 rough\TestProperties.class
 utilities\TestUtils.class
-base\testcases\AddCustomer.class
+testcases\LoginTest.class
+testcases\AddCustomer.class

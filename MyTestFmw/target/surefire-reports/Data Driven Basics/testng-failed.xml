@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="TEST(failed)" verbose="0">
     <classes>
-      <class name="base.testcases.LoginTest">
+      <class name="testcases.LoginTest">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="registerIntoEshop" invocation-numbers="0"/>
         </methods>
-      </class> <!-- base.testcases.LoginTest -->
+      </class> <!-- testcases.LoginTest -->
     </classes>
   </test> <!-- TEST(failed) -->
 </suite> <!-- Failed suite [Data Driven Basics] -->

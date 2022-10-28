@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.684 sec <<< FAILURE! - in TestSuite
-registerIntoEshop(base.testcases.LoginTest)  Time elapsed: 1.408 sec  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.134 sec <<< FAILURE! - in TestSuite
+registerIntoEshop(testcases.LoginTest)  Time elapsed: 1.995 sec  <<< FAILURE!
 java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.
 	at org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:92)
 	at org.openqa.selenium.By$ByXPath.<init>(By.java:287)
 	at org.openqa.selenium.By.xpath(By.java:89)
-	at base.testcases.LoginTest.registerIntoEshop(LoginTest.java:28)
+	at testcases.LoginTest.registerIntoEshop(LoginTest.java:30)
 

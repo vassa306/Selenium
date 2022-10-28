@@ -2,22 +2,22 @@
 <testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-28T21:16:10 CEST" name="Data Driven Basics" finished-at="2022-10-28T21:16:11 CEST" duration-ms="1548">
+  <suite started-at="2022-10-28T21:43:11 CEST" name="Data Driven Basics" finished-at="2022-10-28T21:43:14 CEST" duration-ms="2139">
     <groups>
     </groups>
-    <test started-at="2022-10-28T21:16:10 CEST" name="TEST" finished-at="2022-10-28T21:16:11 CEST" duration-ms="1548">
+    <test started-at="2022-10-28T21:43:11 CEST" name="TEST" finished-at="2022-10-28T21:43:14 CEST" duration-ms="2139">
       <class name="base.TestBase">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:base.TestBase@57c03d88]" started-at="2022-10-28T21:16:05 CEST" name="setUp" finished-at="2022-10-28T21:16:10 CEST" duration-ms="4734" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:base.TestBase@674bd420]" started-at="2022-10-28T21:43:06 CEST" name="setUp" finished-at="2022-10-28T21:43:11 CEST" duration-ms="5201" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:base.TestBase@57c03d88]" started-at="2022-10-28T21:16:11 CEST" name="tearDown" finished-at="2022-10-28T21:16:12 CEST" duration-ms="699" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:base.TestBase@674bd420]" started-at="2022-10-28T21:43:14 CEST" name="tearDown" finished-at="2022-10-28T21:43:14 CEST" duration-ms="822" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- base.TestBase -->
-      <class name="base.testcases.LoginTest">
-        <test-method signature="registerIntoEshop(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:base.testcases.LoginTest@4fbe37eb]" started-at="2022-10-28T21:16:10 CEST" name="registerIntoEshop" data-provider="getData" finished-at="2022-10-28T21:16:11 CEST" duration-ms="1158" status="FAIL">
+      <class name="testcases.LoginTest">
+        <test-method signature="registerIntoEshop(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@71cf1b07]" started-at="2022-10-28T21:43:12 CEST" name="registerIntoEshop" data-provider="getData" finished-at="2022-10-28T21:43:13 CEST" duration-ms="1685" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -49,7 +49,7 @@
 at org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:92)
 at org.openqa.selenium.By$ByXPath.<init>(By.java:287)
 at org.openqa.selenium.By.xpath(By.java:89)
-at base.testcases.LoginTest.registerIntoEshop(LoginTest.java:28)
+at testcases.LoginTest.registerIntoEshop(LoginTest.java:30)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -87,7 +87,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerIntoEshop -->
-      </class> <!-- base.testcases.LoginTest -->
+      </class> <!-- testcases.LoginTest -->
     </test> <!-- TEST -->
   </suite> <!-- Data Driven Basics -->
 </testng-results>
